@@ -3,9 +3,10 @@ package com.ipartek.formacion;
 import java.util.Scanner;
 
 public class Ahorcado {
-	
+
 	/**
 	 * Juego del ahorcado
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -16,18 +17,19 @@ public class Ahorcado {
 		int tamano = palabra.length();
 		char[] respuesta;
 		respuesta = new char[tamano];
-		Boolean[] letrasRepes = new Boolean[tamano]; //array de booleans para que no cuente letras repetidas como aciertos
-		
+		// array de booleans para que no cuente letras repetidas como aciertos
+		Boolean[] letrasRepes = new Boolean[tamano]; 
+
 		Scanner sc = new Scanner(System.in);
 
 		// inicializamos el array de chars de la respuesta
 		for (int i = 0; i < tamano; i++) {
 			respuesta[i] = '_';
 		}
-		
-		//inicializamos el array de booleans a falso
+
+		// inicializamos el array de booleans a falso
 		for (int i = 0; i < letrasRepes.length; i++) {
-			letrasRepes[i]=false;		
+			letrasRepes[i] = false;
 		}
 
 		System.out.println("*******************EMPIEZA EL JUEGO DEL AHORCADO**********************");
@@ -49,13 +51,14 @@ public class Ahorcado {
 
 			// pedimos la letra del usuario
 			System.out.println("\nIntroduce una letra: "); // \n es para hacer salto de linea
-			letraIntroducida = sc.nextLine().trim().toLowerCase(); //trim elimina espacios por delante y detras
+			letraIntroducida = sc.nextLine().trim().toLowerCase(); // trim elimina espacios por delante y detras
 
-			// si la palabra contiene la letra introducida 
-			if (palabra.contains(letraIntroducida)) { 
+			// si la palabra contiene la letra introducida
+			if (palabra.contains(letraIntroducida)) {
 				for (int i = 0; i < tamano; i++) {
-					// si la letra de la palabra coincide con la introducida y no habia introducido la misma letra anteriormente
-					if (palabra.charAt(i) == letraIntroducida.charAt(0)&& letrasRepes[i].equals(false)) {
+					// si la letra de la palabra coincide con la introducida y no habia introducido
+					// la misma letra anteriormente
+					if (palabra.charAt(i) == letraIntroducida.charAt(0) && letrasRepes[i].equals(false)) {
 						respuesta[i] = letraIntroducida.charAt(0);
 						letrasRepes[i] = true;
 						aciertos++;
@@ -66,10 +69,10 @@ public class Ahorcado {
 			}
 		} // end while
 
-		if (vidas == 0) { 
+		if (vidas == 0) {
 			dibujarAhorcado(vidas);
 			System.out.println("\n********************GAME OVER*************************");
-		} else { 
+		} else {
 			System.out.printf("La palabra es: ");
 			for (int i = 0; i < tamano; i++) {
 				System.out.printf("_" + respuesta[i] + "_");
@@ -79,8 +82,6 @@ public class Ahorcado {
 		sc.close();
 	}
 
-	
-	
 	/**
 	 * Dado el numero de vidas dibuja el ahorcado correspondiente
 	 * 
@@ -88,7 +89,6 @@ public class Ahorcado {
 	 */
 	public static void dibujarAhorcado(int vidas) {
 		switch (vidas) {
-		
 		case 7:
 			System.out.println(" ---------------------");
 			for (int j = 0; j < 15; j++) {
@@ -97,9 +97,6 @@ public class Ahorcado {
 			}
 			System.out.println("__________");
 			break;
-		
-			
-
 		case 6:
 			System.out.println(" ---------------------");
 			System.out.println(" |                     |");
