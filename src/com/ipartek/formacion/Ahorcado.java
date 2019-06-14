@@ -15,8 +15,7 @@ public class Ahorcado {
 		String letraIntroducida = null; // metemos la letra que mete el usuario para hacer la comparacion
 		String palabra = "viernes";
 		int tamano = palabra.length();
-		char[] respuesta;
-		respuesta = new char[tamano];
+		char[] respuesta = new char[tamano];
 		// array de booleans para que no cuente letras repetidas como aciertos
 		Boolean[] letrasRepes = new Boolean[tamano]; 
 
