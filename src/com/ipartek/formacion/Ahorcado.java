@@ -13,7 +13,7 @@ public class Ahorcado {
 		int vidas = 7;
 		int aciertos = 0;
 		String letraIntroducida = null; // metemos la letra que mete el usuario para hacer la comparacion
-		String palabra = "viernes";
+		String palabra = "murcielago";
 		int tamano = palabra.length();
 		char[] respuesta = new char[tamano];
 		// array de booleans para que no cuente letras repetidas como aciertos
@@ -33,7 +33,7 @@ public class Ahorcado {
 
 		System.out.println("*******************EMPIEZA EL JUEGO DEL AHORCADO**********************");
 
-		// recorre mientras vidas > 0 y el acierto sea menor que el tamaño de la palabra
+		// recorre mientras vidas > 0 y el el numero de aciertos sea menor que el tamaño de la palabra
 		while (vidas > 0 && aciertos < tamano) {
 			// Saca por pantalla las vidas y aciertos actuales
 			System.out.println("*******************VIDAS = " + vidas);
@@ -50,14 +50,14 @@ public class Ahorcado {
 
 			// pedimos la letra del usuario
 			System.out.println("\nIntroduce una letra: "); // \n es para hacer salto de linea
-			letraIntroducida = sc.nextLine().trim().toLowerCase(); // trim elimina espacios por delante y detras
+			letraIntroducida = sc.nextLine().trim().toUpperCase(); // trim elimina espacios por delante y detras
 
 			// si la palabra contiene la letra introducida
-			if (palabra.contains(letraIntroducida)) {
+			if (palabra.toUpperCase().contains(letraIntroducida)) {
 				for (int i = 0; i < tamano; i++) {
 					// si la letra de la palabra coincide con la introducida y no habia introducido
 					// la misma letra anteriormente
-					if (palabra.charAt(i) == letraIntroducida.charAt(0) && letrasRepes[i].equals(false)) {
+					if (palabra.toUpperCase().charAt(i) == letraIntroducida.charAt(0) && letrasRepes[i].equals(false)) {
 						respuesta[i] = letraIntroducida.charAt(0);
 						letrasRepes[i] = true;
 						aciertos++;
