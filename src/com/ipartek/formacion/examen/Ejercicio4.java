@@ -24,7 +24,7 @@ public class Ejercicio4 {
 		Tren tren = new Tren(tipo,referencia,asientosOcupados,anosActivo);
 		System.out.println("Datos identificativos del tren:"+ tren.toString());
 		
-		if (tren.TrenLleno()) {
+		if (tren.trenLleno()) {
 			System.out.println("El tren esta lleno");
 		}else {
 			System.out.println("Aun quedan asientos");

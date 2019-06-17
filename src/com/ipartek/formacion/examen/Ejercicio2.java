@@ -40,10 +40,9 @@ public class Ejercicio2 {
 	}
 
 	/**
-	 * Subprograma que dada una puntuación calculara si se cree que el participante pueda ganar el campeonato
-	 * puntuacion > 70 puedeGanar true, sino entonces puedeGanar false
+	 * Subprograma que dada una puntuación calculara si el participante puede ganar el campeonato
 	 * @param puntuacion int puntuación del participante
-	 * @return puedeGanar boolean representa si el participante puede ganar o no
+	 * @return puedeGanar boolean true si puntuacion >=70, else false
 	 */
 	private static boolean ganar(int puntuacion) {
 		boolean puedeGanar;

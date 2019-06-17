@@ -1,6 +1,9 @@
 package com.ipartek.formacion.examen;
 
 public class Tren {
+	
+	private static final int CAPACIDAD_MAXIMA=400;
+	private static final int ANOS_ACTIVO=40;
 	// atributos
 	private String tipo;
 	private String referencia;
@@ -58,11 +61,11 @@ public class Tren {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Metodo que comprueba si el tren esta lleno
+	 * @return true si asientosOcupados > 400, else false
 	 */
-	public boolean TrenLleno() {
-		if (asientosOcupados > 400) {
+	public boolean trenLleno() {
+		if (asientosOcupados > CAPACIDAD_MAXIMA) {
 			return true;
 		} else {
 			return false;
@@ -71,10 +74,10 @@ public class Tren {
 	}
 
 	/**
-	 * 
+	 * Metodo que comprueba si el tren lleva demasiados años en activo
 	 */
 	public void demasiadoViejo() {
-		if (anosActivo >= 40) {
+		if (anosActivo >= ANOS_ACTIVO) {
 			System.out.println("EN CIRCULACION");
 		} else {
 			System.out.println("FUERA DE CIRCULACION");

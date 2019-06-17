@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 public class Ejercicio1 {
 	
-	public static final int NUMERO_BOXEADORES=30;
-	public static final int PESO_PESADO =91;
-	public static final int PESO_MEDIANO_MAX=90;
-	public static final int PESO_MEDIANO_MIN=65;
-	public static final int PESO_LIGERO_MAX=64;
-	public static final int PESO_LIGERO_MIN=58;
-	public static final int PESO_PLUMA_MAX=57;
-	public static final int PESO_PLUMA_MIN=52;
-	public static final int PESO_MOSCA=51;
+	final static int NUMERO_BOXEADORES=30;
+	static int PESO_PESADO =91;
+	static int PESO_MEDIANO_MAX=90;
+	static int PESO_MEDIANO_MIN=65;
+	static int PESO_LIGERO_MAX=64;
+	static int PESO_LIGERO_MIN=58;
+	static int PESO_PLUMA_MAX=57;
+	static int PESO_PLUMA_MIN=52;
+	static int PESO_MOSCA=51;
 	
 	/**
 	 * El programa pedira introducir un peso en numero entero para el numero de boxeadores de un torneo
@@ -30,7 +30,9 @@ public class Ejercicio1 {
 			try {
 				String pesoIntroducido = sc.nextLine();
 				peso = Integer.parseInt(pesoIntroducido);
-				
+				if (peso<=0) {
+					throw new Exception("Peso incorrecto, debe ser >0");
+				}
 				if (peso < PESO_MOSCA) { //menor de 52 peso mosca
 					System.out.println("El peso introducido es " + peso +", su categoria es peso mosca");
 				}
