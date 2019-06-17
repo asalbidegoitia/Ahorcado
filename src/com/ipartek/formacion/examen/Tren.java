@@ -50,26 +50,33 @@ public class Tren {
 	}
 
 	// metodos
-	
+
 	@Override
 	public String toString() {
 		return "Tren [tipo=" + tipo + ", referencia=" + referencia + ", asientosOcupados=" + asientosOcupados
 				+ ", anosActivo=" + anosActivo + "]";
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public boolean TrenLleno() {
-		if (asientosOcupados >400){
+		if (asientosOcupados > 400) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
-		
+
 	}
 
+	/**
+	 * 
+	 */
 	public void demasiadoViejo() {
-		if (anosActivo>=40){
+		if (anosActivo >= 40) {
 			System.out.println("EN CIRCULACION");
-		}else {
+		} else {
 			System.out.println("FUERA DE CIRCULACION");
 		}
 	}

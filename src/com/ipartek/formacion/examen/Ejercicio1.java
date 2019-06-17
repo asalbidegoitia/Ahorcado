@@ -23,7 +23,6 @@ public class Ejercicio1 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int peso = 0;
-		boolean repetir = true;
 		int contador = 1;
 		
 		do {
